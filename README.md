@@ -14,7 +14,7 @@ personSchema.use(bindableSchemaValidator);
 
 
 //create a watcher of a particular bindable object
-var personWatcher = personSchema.watch(person);
+var personWatcher = personSchema.attach(person);
 
 //when the person changes, the fields will 
 person.set("username", "abba");

@@ -1,0 +1,24 @@
+{
+  "name": "bindable-schema",
+  "version": "0.0.0",
+  "description": "```javascript",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/classdojo/bindable-schema.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "b0f056aef3111ef1bf882c834d6a5be9eab4ee14",
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "mocha": "~1.13.0"
+  },
+  "dependencies": {
+    "type-component": "0.0.1"
+  }
+}
