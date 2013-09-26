@@ -4,7 +4,7 @@ var person   = new BindableObject(),
 personSchema = new BindableSchema({
   username: {
     $validate: [    
-      { min: 6, error: { message: "Username must be at least 6 characters" },
+      { min: 6, error: { message: "Username must be at least 6 characters" } },
       checkUsername
     ]
   }
