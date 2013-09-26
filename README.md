@@ -19,8 +19,8 @@ var personWatcher = personSchema.attach(person);
 //when the person changes, the fields will 
 person.set("username", "abba");
 
-personWatcher.get("fields.username.error"); // Username must be at least 6 characters
-personWatcher.get("fields.username.valid"); // false
+personWatcher.get("fields.error.username"); // Username must be at least 6 characters
+personWatcher.get("fields.valid.username"); // false
 personWatcher.get("valid"); // false
 
 //set username that exists
