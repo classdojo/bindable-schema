@@ -12,7 +12,7 @@ describe("validate/type#", function() {
       $required: true
     }
   });
-  
+
   s.use(bindableSchema.plugins.validator);
 
   it("fails if the value doesn't exist", function(next) {
@@ -28,5 +28,4 @@ describe("validate/type#", function() {
   it("doesn't break if the value is false", function(next) {
     s.model({name:"AGG",age:false}).validate(next);
   });
-
-})
+});
