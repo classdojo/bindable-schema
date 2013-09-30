@@ -12,7 +12,9 @@ class Field extends EventEmitter
   ###
   ###
 
-  constructor: (@plugins, @options) ->
+  constructor: (@options, @plugins) ->
+
+    options.field = @
 
     # name of this field
     @name = options.name
@@ -32,13 +34,18 @@ class Field extends EventEmitter
   ###
   ###
 
-  attach: (target, fields) ->
-
-    @plugins.attach(target, info, @)
-
+  watch: (target, watcher) ->
+    @plugins.watch(target, watcher, @)
     for field in @fields
-      field.attach target
+      field.watch target, watcher
 
+  ###
+  ###
+
+  use: (plugin) -> 
+    plugin.field @
+    for field in @fields
+      field.use plugin
 
   ###
    gets the field based on the given path - passed to another method
@@ -101,8 +108,8 @@ class Field extends EventEmitter
     options.path   = (@options.path or []).concat fieldName
     options.name   = fieldName
 
-    @fields.push field = new Field @plugins, options
+    @fields.push field = new Field options, @plugins
     @_fieldsByName[field.name] = field
 
 
-module.exports = (schema, options = {}) -> new Field schema, normalize options
+module.exports = (options = {}, schema) -> new Field normalize(options), schema

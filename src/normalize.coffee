@@ -23,8 +23,6 @@ module.exports = normalize = (options) ->
     options = {}
 
 
-  
-
   # go through all the options, and parse options, from fields
   for optionName of options
 

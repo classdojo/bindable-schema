@@ -4,7 +4,7 @@
   "description": "```javascript",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive --timeout 100"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,9 @@
     "mocha": "~1.13.0"
   },
   "dependencies": {
-    "type-component": "0.0.1"
+    "type-component": "0.0.1",
+    "factories": "0.0.3",
+    "async": "~0.2.9",
+    "toarray": "0.0.1"
   }
 }

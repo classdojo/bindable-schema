@@ -14,9 +14,17 @@ class Plugins
   ###
   ###
 
-  attach: (target, info, field) ->
+  model: (model) ->
     for plugin in @_plugins
-      plugin.attach target, info, field
+      plugin.model model
+    @
+
+  ###
+  ###
+
+  watch: (target, watcher, field) ->
+    for plugin in @_plugins
+      plugin.watch target, watcher, field
 
 
 
