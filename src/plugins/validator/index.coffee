@@ -34,6 +34,7 @@ class Validator extends require("../base")
     pending = watcher.get("$pending")
 
     validate = () ->
+      return if field.fields.length
       watcher.set field.path + ".$validating", true
       watcher.set field.path + ".$validated", false
 
@@ -41,13 +42,17 @@ class Validator extends require("../base")
         pendingIndex = pending.length
         pending.push field
 
+      # remove the error from the collection
+      if ~(i = errors.searchIndex({ _id: field.path }))
+        errors.splice i, 1
+
+      if field.options.required and not model.get(field.path)?
+        return
+
       field.validate model, (err) ->  
         watcher.set field.path + ".$validating", false
         watcher.set field.path + ".$validated", true
 
-        # remove the error from the collection
-        if ~(i = errors.searchIndex({ _id: field.path }))
-          errors.splice i, 1
 
         if err
           err._id = field.path
@@ -55,9 +60,7 @@ class Validator extends require("../base")
         else
           pending.splice pendingIndex, 1
 
-
         watcher.set field.path + ".$error", err
-
 
     model.bind(field.path).to(validate)
     validate()
