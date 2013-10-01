@@ -24,7 +24,7 @@ class TestValidator extends require("./base")
       else
         next()
 
-    @_test String(value), onTest
+    @_test.call model, String(value), onTest
 
 
   ###
@@ -44,7 +44,7 @@ class TestValidator extends require("./base")
     else
       return (value, next) ->
         try 
-          next(!tester(value))
+          next(!tester.call(@, value))
         catch e
           next(false)
 
