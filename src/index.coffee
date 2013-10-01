@@ -8,8 +8,10 @@ class BindableSchema
   ###
 
   constructor: (definition) ->
-    @plugins = new Plugins()
-    @root = field definition, @plugins
+
+    @plugins    = new Plugins()
+    @root       = field definition, @plugins
+    @modelClass = @root.options.modelClass or bindable.Object
 
   ###
   ###
@@ -23,7 +25,7 @@ class BindableSchema
   ###
 
   model: (data = {}) ->
-    model = new bindable.Object data
+    model = new @modelClass data
     model.schema = @
     @plugins.model model
     model
