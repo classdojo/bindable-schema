@@ -14,13 +14,14 @@ class Field extends EventEmitter
 
   constructor: (@options, @plugins) ->
 
+
     options.field = @
 
     # name of this field
     @name = options.name
 
     # path to this field
-    @path = (options.path or []).join(".")
+    @path = @_id = (options.path or []).join(".")
 
     # parent field
     @parent = @options.parent
@@ -36,6 +37,7 @@ class Field extends EventEmitter
 
   watch: (target, watcher) ->
     @plugins.watch(target, watcher, @)
+
     for field in @fields
       field.watch target, watcher
 

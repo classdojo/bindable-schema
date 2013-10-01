@@ -22,7 +22,7 @@ class BindableSchema
   ###
   ###
 
-  model: (data) ->
+  model: (data = {}) ->
     model = new bindable.Object data
     model.schema = @
     @plugins.model model

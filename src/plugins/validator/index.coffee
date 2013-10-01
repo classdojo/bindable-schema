@@ -1,4 +1,5 @@
 validators = require "./validators"
+bindable   = require "bindable"
 
 class Validator extends require("../base")
 
@@ -17,6 +18,49 @@ class Validator extends require("../base")
     field._validator = validators.create(field.options)
     field.validate = (model, next) ->
       field._validator.test model, next
+
+  ###
+  ###
+
+  watch: (model, watcher, field) ->
+
+    #root?
+    unless field.parent
+      watcher.set "$errors", new bindable.Collection()
+      watcher.set "$pending", new bindable.Collection()
+      return
+
+    errors  = watcher.get("$errors")
+    pending = watcher.get("$pending")
+
+    validate = () ->
+      watcher.set field.path + ".$validating", true
+      watcher.set field.path + ".$validated", false
+
+      unless ~(pendingIndex = pending.searchIndex { _id: field._id })
+        pendingIndex = pending.length
+        pending.push field
+
+      field.validate model, (err) ->  
+        watcher.set field.path + ".$validating", false
+        watcher.set field.path + ".$validated", true
+
+        # remove the error from the collection
+        if ~(i = errors.searchIndex({ _id: field.path }))
+          errors.splice i, 1
+
+        if err
+          err._id = field.path
+          errors.push err
+        else
+          pending.splice pendingIndex, 1
+
+
+        watcher.set field.path + ".$error", err
+
+
+    model.bind(field.path).to(validate)
+    validate()
 
   ###
   ###

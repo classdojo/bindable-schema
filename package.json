@@ -1,6 +1,6 @@
 {
   "name": "bindable-schema",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "```javascript",
   "main": "./lib/index.js",
   "scripts": {
@@ -22,6 +22,7 @@
     "type-component": "0.0.1",
     "factories": "0.0.3",
     "async": "~0.2.9",
-    "toarray": "0.0.1"
+    "toarray": "0.0.1",
+    "bindable": "~0.4.2"
   }
 }
