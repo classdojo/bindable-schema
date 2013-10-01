@@ -1,5 +1,4 @@
 toarray = require "toarray"
-factory = require "./factory"
 Collection = require "./collection"
 
 
