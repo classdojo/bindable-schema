@@ -49,6 +49,8 @@ class Validator extends require("../base")
       if ~(i = errors.searchIndex({ _id: field.path }))
         errors.splice i, 1
 
+      watcher.set "$valid", !pending.length
+
       if field.options.required and not model.get(field.path)?
         return
 
