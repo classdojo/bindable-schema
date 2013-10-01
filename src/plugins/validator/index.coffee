@@ -66,7 +66,7 @@ class Validator extends require("../base")
         if err
           err._id = field.path
           errors.push err
-        else
+        else if ~(pendingIndex = pending.searchIndex { _id: field._id })
           pending.splice pendingIndex, 1
 
         watcher.set field.path + ".$error", err
