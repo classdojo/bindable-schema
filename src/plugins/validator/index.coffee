@@ -1,5 +1,6 @@
 validators = require "./validators"
 bindable   = require "bindable"
+toarray    = require "toarray"
 
 class Validator extends require("../base")
 
@@ -68,7 +69,9 @@ class Validator extends require("../base")
 
         watcher.set field.path + ".$error", err
 
-    model.bind(field.path).to(validate)
+    for prop in toarray(field.options.bind or field.path)
+      model.bind(prop).to(validate)
+
     validate()
 
   ###
