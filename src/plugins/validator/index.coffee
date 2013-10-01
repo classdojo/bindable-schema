@@ -35,7 +35,7 @@ class Validator extends require("../base")
 
     validate = () ->
       return if field.fields.length
-      watcher.set field.path + ".$validating", true
+      watcher.set field.path + ".$validating", false
       watcher.set field.path + ".$validated", false
       watcher.set field.path + ".$pending", true
 
@@ -49,6 +49,8 @@ class Validator extends require("../base")
 
       if field.options.required and not model.get(field.path)?
         return
+
+      watcher.set field.path + ".$validating", true
 
       field.validate model, (err) ->  
         watcher.set field.path + ".$validating", false
