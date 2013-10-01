@@ -1,4 +1,3 @@
-factory   = require "./factory"
 async     = require "async"
 toarray   = require "toarray"
 type      = require "type-component"
