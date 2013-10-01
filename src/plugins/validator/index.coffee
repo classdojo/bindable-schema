@@ -37,6 +37,7 @@ class Validator extends require("../base")
       return if field.fields.length
       watcher.set field.path + ".$validating", true
       watcher.set field.path + ".$validated", false
+      watcher.set field.path + ".$pending", true
 
       unless ~(pendingIndex = pending.searchIndex { _id: field._id })
         pendingIndex = pending.length
@@ -52,6 +53,7 @@ class Validator extends require("../base")
       field.validate model, (err) ->  
         watcher.set field.path + ".$validating", false
         watcher.set field.path + ".$validated", true
+        watcher.set field.path + ".$pending", false
 
 
         if err
