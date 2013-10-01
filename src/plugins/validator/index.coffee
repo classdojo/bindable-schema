@@ -68,6 +68,7 @@ class Validator extends require("../base")
           pending.splice pendingIndex, 1
 
         watcher.set field.path + ".$error", err
+        watcher.set "$valid", !pending.length
 
     for prop in toarray(field.options.bind or field.path)
       model.bind(prop).to(validate)
