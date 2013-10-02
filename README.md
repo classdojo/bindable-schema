@@ -1,31 +1,27 @@
-```javascript
+Think if bindable schemas as self-contained applications that have a set of instructions that control a particular model. 
 
-var person   = new BindableObject(),
-personSchema = new BindableSchema({
-  username: {
-    $validate: [    
-      { min: 6, error: { message: "Username must be at least 6 characters" } },
-      checkUsername
-    ]
-  }
-});
-
-personSchema.use(bindableSchemaValidator);
+```coffeescript
+bindable       = require "bindable"
+BindableSchema = require "bindable-schema"
 
 
-//create a watcher of a particular bindable object
-var personWatcher = personSchema.attach(person);
+class Parent extends bindable.Object
 
-//when the person changes, the fields will 
-person.set("username", "abba");
+  ###
+  ###
 
-personWatcher.get("username.$valid"); // Username must be at least 6 characters
-personWatcher.get("valid.$error"); // false
-personWatcher.get("$valid"); // false
+  login: () ->
 
-//set username that exists
-person.set("username", "craigonator");
 
-//after N seconds
-personWatcher.get("fields.username.error"); // username exists
+
+
+schema = new BindableSchema {
+  $modelClass: Parent
+  firstName: "string",
+  lastName: "string"
+}
+
+
+model = schema.model()
+
 ```

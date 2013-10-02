@@ -1,0 +1,31 @@
+type = require "type-component"
+
+class TypeDecor extends require("./base")
+
+  ###
+  ###
+
+  validate: (model, next) =>
+    value = @value model
+    return next() unless value?
+    t = type value
+
+    valid = t is @options.type
+
+    switch t
+      when "number" then valid = valid and !isNaN(value)
+      when "string" then valid = true
+
+    unless valid
+      next new Error "#{@field.path} must be a #{@options.type}"
+    else
+      next()
+
+
+  ###
+  ###
+
+  @test   : (options) -> options.type?
+  @create : (options) -> new TypeDecor options
+
+module.exports = TypeDecor

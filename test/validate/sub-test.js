@@ -1,4 +1,6 @@
+
 var bindableSchema = require("../.."),
+model = require("../helpers/model"),
 expect = require("expect.js");
 
 describe("validate/explicit#", function() {
@@ -9,10 +11,9 @@ describe("validate/explicit#", function() {
     }
   });
   
-  s.use(bindableSchema.plugins.validator);
 
   it("can validate a sub field", function(next) {
-    s.model({ address: { city: 0 }}).validate(function(err) {
+    model({ address: { city: 0 }}, s).validate(function(err) {
       expect(!!err).to.be(true);
       next();
     })

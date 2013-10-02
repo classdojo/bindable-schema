@@ -1,4 +1,6 @@
+
 var bindableSchema = require("../.."),
+model = require("../helpers/model"),
 expect = require("expect.js");
 
 describe("validate/explicit#", function() {
@@ -28,34 +30,34 @@ describe("validate/explicit#", function() {
       ]
     }
   });
+
   
-  s.use(bindableSchema.plugins.validator);
 
 
   it("can check if a username exists and pass", function(next) {
-    s.model({ username: "craig" }).validate(next);
+    model({ username: "craig" }, s).validate(next);
   });
 
   it("can check if a username exists and fail", function(next) {
-    s.model({ username: "craigers" }).validate(function(err) {
+    model({ username: "craigers" }, s).validate(function(err) {
       expect(err.message).to.be("username already exists");
       next();
     }); 
   });
 
   it("can validate the password and fail", function(next) {
-    var model = s.model();
-    model.set("password", "");
-    model.validate(function(err) {
+    var m = model({}, s);
+    m.set("password", "");
+    m.validate(function(err) {
       expect(err.message).to.be("must contain at least one number");
-      model.set("password", "0");
-      model.validate(function(err) {
+      m.set("password", "0");
+      m.validate(function(err) {
         expect(err.message).to.be("must be at least 7 characters");
-        model.set("password", "0123456");
-        model.validate(function(err) {
+        m.set("password", "0123456");
+        m.validate(function(err) {
           expect(err.message).to.be("must contain at least 1 letter");
-          model.set("password", "01234567Z");
-          model.validate(next);
+          m.set("password", "01234567Z");
+          m.validate(next);
         });
       });
     })

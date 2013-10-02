@@ -1,6 +1,6 @@
 {
   "name": "bindable-schema",
-  "version": "0.0.9",
+  "version": "0.1.1",
   "description": "```javascript",
   "main": "./lib/index.js",
   "scripts": {
@@ -16,7 +16,8 @@
   "gitHead": "b0f056aef3111ef1bf882c834d6a5be9eab4ee14",
   "devDependencies": {
     "expect.js": "~0.2.0",
-    "mocha": "~1.13.0"
+    "mocha": "~1.13.0",
+    "structr": "~0.2.3"
   },
   "dependencies": {
     "type-component": "0.0.1",
@@ -24,6 +25,7 @@
     "async": "~0.2.9",
     "toarray": "0.0.1",
     "bindable": "~0.4.2",
-    "funwrap": "0.0.7"
+    "funwrap": "0.0.7",
+    "flatten": "0.0.1"
   }
 }

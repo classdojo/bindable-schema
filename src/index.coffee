@@ -1,41 +1,23 @@
-field     = require "./field"
-bindable  = require "bindable"
-Plugins   = require "./plugins"
+field    = require "./field"
+decor    = require "./field/decor"
+bindable = require "bindable"
+
 
 class BindableSchema
-
+  
   ###
   ###
 
   constructor: (definition) ->
-    @plugins    = new Plugins()
-    @root       = field definition, @plugins
-    @modelClass = @root.options.modelClass or bindable.Object
+    @root = field definition
+    @root.use decor
 
   ###
   ###
 
-  use: (factory) ->
-    plugin = factory @
-    @plugins.push plugin
-    @root.use plugin
+  use: (decor) ->
+    @root.use decor
 
-  ###
-  ###
 
-  model: (data = {}) ->
-    model = new @modelClass data
-    model.schema = @
-    @plugins.model model
-    model
-
-  ###
-  ###
-
-  watch: (target) ->
-    watcher = new bindable.Object()
-    @root.watch target, watcher
-    watcher
 
 module.exports = (definition) -> new BindableSchema definition
-module.exports.plugins = require("./plugins/index")

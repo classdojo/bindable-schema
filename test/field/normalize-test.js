@@ -1,4 +1,4 @@
-var normalizeDefinition = require("../../lib/normalize"),
+var normalizeDefinition = require("../../lib/field/normalize"),
 expect = require("expect.js");
 
 describe("field/normalize#", function() {

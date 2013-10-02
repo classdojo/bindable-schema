@@ -1,6 +1,8 @@
 var bindableSchema = require("../.."),
 expect = require("expect.js");
 
+
+return;
 describe("validate/explicit#", function() {
 
   var s = bindableSchema({
@@ -29,7 +31,6 @@ describe("validate/explicit#", function() {
     }
   });
   
-  s.use(bindableSchema.plugins.validator);
 
   var model, watcher = s.watch(model = s.model());
 
