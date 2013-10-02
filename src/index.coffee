@@ -8,7 +8,6 @@ class BindableSchema
   ###
 
   constructor: (definition) ->
-
     @plugins    = new Plugins()
     @root       = field definition, @plugins
     @modelClass = @root.options.modelClass or bindable.Object
@@ -37,11 +36,6 @@ class BindableSchema
     watcher = new bindable.Object()
     @root.watch target, watcher
     watcher
-
-
-
-
-
 
 module.exports = (definition) -> new BindableSchema definition
 module.exports.plugins = require("./plugins/index")

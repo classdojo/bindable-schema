@@ -23,6 +23,7 @@
     "factories": "0.0.3",
     "async": "~0.2.9",
     "toarray": "0.0.1",
-    "bindable": "~0.4.2"
+    "bindable": "~0.4.2",
+    "funwrap": "0.0.7"
   }
 }

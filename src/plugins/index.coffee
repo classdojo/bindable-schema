@@ -1,2 +1,3 @@
 module.exports = 
-  validator: require("./validator")
+  validator : require("./validator")
+  sync      : require("./sync")

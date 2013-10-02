@@ -1,4 +1,4 @@
-validators = require "./validators"
+decor      = require "./decor"
 bindable   = require "bindable"
 toarray    = require "toarray"
 
@@ -15,8 +15,8 @@ class Validator extends require("../base")
   ###
 
   field: (field) ->
-    field._validatorFactory = validators
-    field._validator = validators.create(field.options)
+    field._validatorFactory = decor
+    field._validator = decor.create(field.options)
     field.validate = (model, next) ->
       field._validator.test model, next
 
