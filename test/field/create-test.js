@@ -36,7 +36,7 @@ describe("field/create#", function() {
     it("has a reference to the parent field", function() {
       var cr = f, nr;
       ["friends", "friends.address", "friends.address.city"].forEach(function(fieldName) {
-        expect((nr = f.getField(fieldName)).parent).to.be(cr);
+        expect((nr = f.child(fieldName)).parent).to.be(cr);
         cr = nr;
       });
     });
@@ -45,9 +45,9 @@ describe("field/create#", function() {
      */
 
     it("has the correct field path", function() {
-      expect(f.getField("friends").path).to.be("friends");
-      expect(f.getField("friends.address").path).to.be("friends.address");
-      expect(f.getField("friends.address.city").path).to.be("friends.address.city");
+      expect(f.child("friends").path).to.be("friends");
+      expect(f.child("friends.address").path).to.be("friends.address");
+      expect(f.child("friends.address.city").path).to.be("friends.address.city");
     });
 
 
@@ -65,22 +65,22 @@ describe("field/create#", function() {
      */
 
     it("has a reference to the root field", function() {
-      expect(f.getField("friends.address").root).to.be(f);
-      expect(f.getField("friends.address.city").root).to.be(f);
+      expect(f.child("friends.address").root).to.be(f);
+      expect(f.child("friends.address.city").root).to.be(f);
     })
 
     /**
      */
 
     it("can fetch the closest field to a property", function() {
-      expect(f.getField("friends.fds.fsd.fsd.fsd", true)).to.be(f.getField("friends"));
+      expect(f.child("friends.fds.fsd.fsd.fsd", true)).to.be(f.child("friends"));
     });
 
     /**
      */
 
     it("cannot fetch the closest field if no parts exist", function() {
-      expect(f.getField("fdf.fds.fsd.fsd.fsd", true)).to.be(undefined);
+      expect(f.child("fdf.fds.fsd.fsd.fsd", true)).to.be(undefined);
     })
   });
 });

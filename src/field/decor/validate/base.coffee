@@ -3,12 +3,14 @@ class BaseValidator extends require("../base")
   ###
   ###
 
+  @type: "validator"
+
+  ###
+  ###
+
 
   init: () ->
-    @field.mediator.on "pre validate", (model, next) =>
-      @validate model, (err) ->
-        return next(err) if err?
-        next null, model
+    @field.mediator.on "pre validate", @_command @validate
 
 
   ###

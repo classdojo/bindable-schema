@@ -45,9 +45,8 @@ class Field extends EventEmitter
    that's a bit more
   ###
 
-  getField: (path, closest = false) -> 
+  child: (path, closest = false) -> 
     @_getField path.split("."), 0, closest
-
 
   ###
   ###
@@ -56,6 +55,14 @@ class Field extends EventEmitter
     decor.create @options
     for child in @fields
       child.use decor
+
+  ###
+  ###
+
+  setupModel: (model) ->  
+    @emit "setupModel", model
+    for child in @fields
+      child.setupModel model
 
   ###
   ###

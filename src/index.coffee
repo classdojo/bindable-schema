@@ -18,6 +18,12 @@ class BindableSchema
   use: (decor) ->
     @root.use decor
 
+  ###
+   setups a model
+  ###
+
+  setupModel: (model) -> 
+    @root.setupModel model
 
 
 module.exports = (definition) -> new BindableSchema definition
