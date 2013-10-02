@@ -1,5 +1,10 @@
 class BaseMapper extends require("../base")
+  
+  ###
+  ###
 
+  @type: "map"
+  
   ###
   ###
 

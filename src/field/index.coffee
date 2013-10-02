@@ -18,7 +18,7 @@ class Field extends EventEmitter
   ###
   ###
 
-  constructor: (@options, @plugins) ->
+  constructor: (@options, @schema) ->
 
     # commands such as save, load, validate, etc.
     @mediator = funwrap().mediator
@@ -117,7 +117,7 @@ class Field extends EventEmitter
     options.path   = (@options.path or []).concat fieldName
     options.name   = fieldName
 
-    @fields.push field = new Field options, @plugins
+    @fields.push field = new Field options, @schema
     @_fieldsByName[field.name] = field
 
 

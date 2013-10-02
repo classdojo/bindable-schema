@@ -9,13 +9,17 @@ class BindableSchema
   ###
 
   constructor: (definition) ->
-    @root = field definition
-    @root.use decor
+    @root = field definition, @
+    @decor = decor @
+
+    @use decor.validate
+    @use decor.sync
 
   ###
   ###
 
   use: (decor) ->
+    @decor.use decor
     @root.use decor
 
   ###
@@ -27,3 +31,7 @@ class BindableSchema
 
 
 module.exports = (definition) -> new BindableSchema definition
+
+# optional plugins
+module.exports.validate  = decor.validate
+module.exports.sync      = decor.sync

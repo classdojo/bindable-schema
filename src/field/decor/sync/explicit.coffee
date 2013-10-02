@@ -23,13 +23,13 @@ class ExplicitSync extends require("./base")
 
   _map: (model, data, next) =>
 
-    model.rawData = data
+    model.__data = data
 
     @field.mediator.execute "map", model, outcome.e(next).s (model) =>
       unless @field.parent
-        model.set model.rawData
+        model.set model.__data
       else
-        model.set @field.path, model.rawData
+        model.set @field.path, model.__data
       next()
 
   ###

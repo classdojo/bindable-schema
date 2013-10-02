@@ -8,5 +8,5 @@ module.exports =
   create: (options) -> 
     new Collection options, flatten(toarray(options.validate).map((validate) ->
       field = validate.field = options.field
-      field.decorFactory.create validate, (clazz) -> clazz.type is "validator"
+      field.schema.decor.create validate, (clazz) -> clazz.type is "validator"
     )).filter (decor) -> !!decor
