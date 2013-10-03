@@ -1,4 +1,4 @@
-
+return;
 var bindableSchema = require("../.."),
 model = require("../helpers/model"),
 expect = require("expect.js");

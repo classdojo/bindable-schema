@@ -1,0 +1,1 @@
+decor = require "./decor"

@@ -12,8 +12,9 @@ class BindableSchema
     @root = field definition, @
     @decor = decor @
 
-    @use decor.validate
+    @use decor.map
     @use decor.sync
+    @use decor.validate
 
   ###
   ###

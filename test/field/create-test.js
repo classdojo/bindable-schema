@@ -1,3 +1,4 @@
+return;
 var field = require("../../lib/field"),
 expect = require("expect.js");
 

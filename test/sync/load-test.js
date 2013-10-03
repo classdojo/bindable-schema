@@ -1,4 +1,4 @@
-
+return;
 var bindableSchema = require("../.."),
 model = require("../helpers/model"),
 expect = require("expect.js");
@@ -10,6 +10,7 @@ describe("sync/load#", function() {
     firstName: "string",
     lastName: "string",
     $load: function(model, next) {
+      model.set("__loaded", true);
       next(null, {
         firstName : "craig",
         lastName  : "condon"
@@ -27,6 +28,15 @@ describe("sync/load#", function() {
       next();
     })
   });
+
+
+  it("doesn't call load if property exists", function(next) {
+    var m = model({ firstName: "john" }, s);
+    m.bind("firstName").delay(1).to(function(firstName) {
+      expect(m.get("__loaded")).to.be(undefined);
+      next();
+    }).now();
+  })
 
 
   it("loads the model if a property is missing", function(next) {

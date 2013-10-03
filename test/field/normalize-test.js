@@ -1,3 +1,4 @@
+return;
 var normalizeDefinition = require("../../lib/field/normalize"),
 expect = require("expect.js");
 
