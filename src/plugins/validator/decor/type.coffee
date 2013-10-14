@@ -1,9 +1,11 @@
 type = require("type-component")
 
 class TypeValidator extends require("./base")
+  
+  ###
+  ###
 
-  test: (model, next) ->
-    value = model.get(@field.path)
+  test: (context, value, next) ->
     return next() unless value?
     t = type value
 

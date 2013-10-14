@@ -9,7 +9,7 @@ class Validator extends require("../base")
 
   schema: (schema) ->
     schema.validate = (model, next) => 
-      schema.root.validate arguments...
+      schema.root.validate model, model.toJSON(), next
 
   ###
   ###
@@ -17,8 +17,8 @@ class Validator extends require("../base")
   field: (field) ->
     field._validatorFactory = decor
     field._validator = decor.create(field.options)
-    field.validate = (model, next) ->
-      field._validator.test model, next
+    field.validate = (context, value, next) ->
+      field._validator.test context, value, next
 
   ###
   ###
@@ -56,7 +56,7 @@ class Validator extends require("../base")
 
       watcher.set field.path + ".$validating", true
 
-      field.validate model, (err) ->  
+      field.validate model, model.get(field.path), (err) ->  
         watcher.set field.path + ".$validating", false
         watcher.set field.path + ".$validated", true
         watcher.set field.path + ".$pending", false

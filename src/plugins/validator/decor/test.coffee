@@ -13,9 +13,8 @@ class TestValidator extends require("./base")
   ###
   ###
 
-  test: (model, next) ->
+  test: (context, value, next) ->
 
-    value = model.get(@field.path)
     return next() unless value?
 
     onTest = (err) =>
@@ -24,8 +23,7 @@ class TestValidator extends require("./base")
       else
         next()
 
-    @_test.call model, String(value), onTest
-
+    @_test.call context, String(value), onTest
 
   ###
   ###
@@ -47,10 +45,6 @@ class TestValidator extends require("./base")
           next(!tester.call(@, value))
         catch e
           next(false)
-
-          
-
-
 
   ###
   ###

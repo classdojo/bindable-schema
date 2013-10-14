@@ -3,9 +3,9 @@ class RequiredValidator extends require("./base")
   ###
   ###
 
-  test: (model, next) ->   
+  test: (context, value, next) ->   
 
-    unless model.get(@field.path)?
+    unless value?
       next new Error "#{@field.path} must be present"
 
     next()

@@ -1,10 +1,10 @@
 {
   "name": "bindable-schema",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "```javascript",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "mocha --recursive --timeout 100"
+    "test": "mocha --recursive --timeout 100 --bail"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "async": "~0.2.9",
     "toarray": "0.0.1",
     "bindable": "~0.4.2",
-    "funwrap": "0.0.7"
+    "funwrap": "0.0.7",
+    "dref": "~0.1.2"
   }
 }

@@ -32,7 +32,7 @@ describe("validate/explicit#", function() {
   s.use(bindableSchema.plugins.validator);
 
   var model, watcher = s.watch(model = s.model());
-
+  
 
   it("properly validates when the model changes", function() {
     model.set("password", "0");

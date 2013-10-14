@@ -13,9 +13,9 @@ class ValidatorCollection extends require("./base")
   ###
   ###
 
-  test: (model, next) ->
+  test: (context, value, next) ->
     async.eachSeries @_validators, ((validator, next) ->
-      validator.test(model, next)
+      validator.test(context, value, next)
     ), next
 
 
