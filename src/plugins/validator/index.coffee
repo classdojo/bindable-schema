@@ -19,6 +19,10 @@ class Validator extends require("../base")
     field._validatorFactory = decor
     field._validator = decor.create(field.options)
     field.validate = (context, value, next) ->
+      if arguments.length is 2
+        next = value
+        value = context
+        
       field._validator.test context, value, next
 
   ###

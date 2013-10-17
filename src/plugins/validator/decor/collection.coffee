@@ -30,8 +30,6 @@ class CollectionValidator extends require("./base")
     options.collection
   @create: (options) -> 
 
-    console.log options.name, "G"
-
     ops = _.extend {}, options
     delete ops.collection
 
