@@ -1,6 +1,6 @@
 {
   "name": "bindable-schema",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "```javascript",
   "main": "./lib/index.js",
   "scripts": {

@@ -9,8 +9,9 @@ class Validator extends require("../base")
 
   schema: (schema) ->
     schema.validate = (context, next) => 
-
       schema.root.validate context, context?.toJSON?() ? context, next
+    schema.validateField = (path, context, next) =>
+      schema.root.getField(path, true).validate(context, context.get(path), next)
 
   ###
   ###
@@ -22,7 +23,7 @@ class Validator extends require("../base")
       if arguments.length is 2
         next = value
         value = context
-        
+
       field._validator.test context, value, next
 
   ###

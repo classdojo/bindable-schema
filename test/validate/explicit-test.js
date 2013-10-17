@@ -1,4 +1,5 @@
 var bindableSchema = require("../.."),
+bindable = require("bindable"),
 expect = require("expect.js");
 
 describe("validate/explicit#", function() {
@@ -41,6 +42,18 @@ describe("validate/explicit#", function() {
       expect(err.message).to.be("username already exists");
       next();
     }); 
+  });
+
+
+  it("can validate an individual field", function(next) {
+    s.validateField("username", new bindable.Object({ username: "craig" }), next);
+  });
+
+  it("can validate an individual field and fail", function(next) {
+    s.validateField("username", new bindable.Object({ username: "craigers" }), function(err) {
+      expect(err).not.to.be(null);
+      next()
+    });
   });
 
   it("can validate the password and fail", function(next) {
