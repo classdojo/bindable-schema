@@ -9,6 +9,8 @@ class TypeValidator extends require("./base")
     return next() unless value?
     t = type value
 
+
+
     valid = t is @options.type
 
     switch t
@@ -21,7 +23,7 @@ class TypeValidator extends require("./base")
       next()
 
   
-  @test: (options) -> options.type
+  @test: (options) -> options.type and not options.collection
   @create: (options) -> new TypeValidator options
 
 module.exports = TypeValidator

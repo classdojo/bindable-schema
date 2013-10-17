@@ -4,6 +4,7 @@ module.exports = factories.group [
   require("./test"),
   require("./explicit"),
   require("./sub"),
+  require("./collection"),
   require("./type"),
   require("./required")
-], [], require("./collection")
+], [], require("./multi")

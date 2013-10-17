@@ -1,12 +1,12 @@
 toarray = require "toarray"
-Collection = require "./collection"
+Multi = require "./multi"
 
 
 module.exports = 
   test: (options) -> 
     options.validate
   create: (options) -> 
-    new Collection options, toarray(options.validate).map (validate) ->
+    new Multi options, toarray(options.validate).map (validate) ->
       field = validate.field = options.field
       field._validatorFactory.create validate
 

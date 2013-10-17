@@ -8,7 +8,7 @@ class SubValidator extends require("./base")
       field.validate context, dref.get(value ? {}, field.name), next
     ), next
 
-  @test: (options) -> options.field.fields
+  @test: (options) -> Object.keys(options.field.fields).length
   @create: (options) -> new SubValidator options
 
 

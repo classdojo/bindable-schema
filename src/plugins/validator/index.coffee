@@ -8,8 +8,9 @@ class Validator extends require("../base")
   ###
 
   schema: (schema) ->
-    schema.validate = (model, next) => 
-      schema.root.validate model, model.toJSON(), next
+    schema.validate = (context, next) => 
+
+      schema.root.validate context, context?.toJSON?() ? context, next
 
   ###
   ###

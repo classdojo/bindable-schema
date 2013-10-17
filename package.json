@@ -1,6 +1,6 @@
 {
   "name": "bindable-schema",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "```javascript",
   "main": "./lib/index.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "toarray": "0.0.1",
     "bindable": "~0.4.2",
     "funwrap": "0.0.7",
-    "dref": "~0.1.2"
+    "dref": "~0.1.2",
+    "underscore": "~1.5.2"
   }
 }
