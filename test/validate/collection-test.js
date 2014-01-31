@@ -1,10 +1,11 @@
-return;
+
 var bindableSchema = require("../.."),
+bindable = require("bindable"),
 expect = require("expect.js");
 
 describe("validate/collection#", function() {
 
-  var s = bindableSchema({
+  /*var s = bindableSchema({
     ids: ["number"]
   });
 
@@ -24,5 +25,50 @@ describe("validate/collection#", function() {
       expect(err).to.be(null);
       next();
     })
-  })
+  });*/
+
+  describe("optional field", function () {
+
+    var s = bindableSchema({
+      loc: [{
+        $required: false,
+        $type: "string"
+      }]
+    });
+
+    s.use(bindableSchema.plugins.validator);
+
+    it("doesn't fail if loc isn't present", function(next) {
+      s.validateField("loc", new bindable.Object({}), function (err) { 
+        expect(err).to.be(undefined);
+        next();
+      });
+    });
+
+    it("fails if loc is the incorrect type", function(next) {
+      s.validateField("loc", new bindable.Object({loc:true}), function (err) { 
+        expect(err.message).not.to.be(undefined);
+        next();
+      });
+    });
+  });
+
+  describe("required field", function () {
+
+    var s = bindableSchema({
+      loc: [{
+        $required: true,
+        $type: "string"
+      }]
+    });
+
+    s.use(bindableSchema.plugins.validator);
+
+    it("fails if loc isn't present", function(next) {
+      s.validateField("loc", new bindable.Object({}), function (err) { 
+        expect(err.message).not.to.be(undefined);
+        next();
+      });
+    });
+  });
 });

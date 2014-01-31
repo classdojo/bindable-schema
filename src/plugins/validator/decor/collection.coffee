@@ -14,9 +14,10 @@ class CollectionValidator extends require("./base")
   ###
   ###
 
-  test: (context, values, next) ->  
+  test: (context, values = [], next) ->  
 
-    unless type(values) is "array"
+
+    if type(values) isnt "array"
       return next new Error "#{values} must be an array"
 
     async.eachSeries values, ((value, next) =>
