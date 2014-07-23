@@ -49,14 +49,14 @@ describe("validate/explicit#", function() {
   });
 
 
-  it("can asynchronously validate a field", function(next) {
+  xit("can asynchronously validate a field", function(next) {
     model.set("username", "abba");
     expect(watcher.get("username.$validating")).to.be(true);
-    var binding = watcher.bind("username.$validating").delay(1).to(function(value) {
+    var binding = watcher.bind("username.$validating", function(value) {
       binding.dispose();
       expect(watcher.get("$errors.length")).to.be(0);
       model.set("username", "craigers");
-      watcher.bind("username.$validated").once().delay(1).to(function(value) {
+      watcher.bind("username.$validated", function(value) {
         expect(watcher.get("$errors.length")).to.be(1);
         expect(watcher.get("username.$error").message).to.be("username already exists");
         next();

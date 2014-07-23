@@ -32,7 +32,7 @@ describe("validate/collection#", function() {
     var s = bindableSchema({
       loc: [{
         $required: false,
-        $type: "string"
+        $type: "number"
       }]
     });
 
@@ -65,7 +65,7 @@ describe("validate/collection#", function() {
     s.use(bindableSchema.plugins.validator);
 
     it("fails if loc isn't present", function(next) {
-      s.validateField("loc", new bindable.Object({}), function (err) { 
+      s.validateField("loc", new bindable.Object(), function (err) { 
         expect(err.message).not.to.be(undefined);
         next();
       });
