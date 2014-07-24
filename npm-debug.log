@@ -1,0 +1,244 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/craig/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz
+12 verbose folder .
+13 info prepublish bindable-schema@0.1.1
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/craig/.npm/1f1177db-tar.lock
+16 silly lockFile 29441200-9409-0-35601275344379246-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz
+17 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz /Users/craig/.npm/29441200-9409-0-35601275344379246-tmp-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 29441200-9409-0-35601275344379246-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz
+21 silly lockFile 29441200-9409-0-35601275344379246-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz
+22 verbose tar unpack /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz
+23 silly lockFile 26482557-9409-0-35601275344379246-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package
+24 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package /Users/craig/.npm/26482557-9409-0-35601275344379246-package.lock
+25 silly lockFile 29441200-9409-0-35601275344379246-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz
+26 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz /Users/craig/.npm/29441200-9409-0-35601275344379246-tmp-tgz.lock
+27 silly gunzTarPerm modes [ '755', '644' ]
+28 silly gunzTarPerm extractEntry package.json
+29 silly gunzTarPerm extractEntry .npmignore
+30 silly gunzTarPerm extractEntry README.md
+31 silly gunzTarPerm extractEntry lib/field.js
+32 silly gunzTarPerm extractEntry lib/index.js
+33 silly gunzTarPerm extractEntry lib/normalize.js
+34 silly gunzTarPerm extractEntry lib/plugins.js
+35 silly gunzTarPerm extractEntry lib/plugins/index.js
+36 silly gunzTarPerm extractEntry lib/plugins/base/index.js
+37 silly gunzTarPerm extractEntry lib/plugins/mapper/index.js
+38 silly gunzTarPerm extractEntry lib/plugins/sync/index.js
+39 silly gunzTarPerm extractEntry lib/plugins/sync/decor/base.js
+40 silly gunzTarPerm extractEntry lib/plugins/sync/decor/collection.js
+41 silly gunzTarPerm extractEntry lib/plugins/sync/decor/factory.js
+42 silly gunzTarPerm extractEntry lib/plugins/sync/decor/index.js
+43 silly gunzTarPerm extractEntry lib/plugins/validator/index.js
+44 silly gunzTarPerm extractEntry lib/plugins/validator/decor/base.js
+45 silly gunzTarPerm extractEntry lib/plugins/validator/decor/collection.js
+46 silly gunzTarPerm extractEntry lib/plugins/validator/decor/explicit.js
+47 silly gunzTarPerm extractEntry lib/plugins/validator/decor/factory.js
+48 silly gunzTarPerm extractEntry lib/plugins/validator/decor/index.js
+49 silly gunzTarPerm extractEntry lib/plugins/validator/decor/multi.js
+50 silly gunzTarPerm extractEntry lib/plugins/validator/decor/required.js
+51 silly gunzTarPerm extractEntry lib/plugins/validator/decor/sub.js
+52 silly gunzTarPerm extractEntry lib/plugins/validator/decor/test.js
+53 silly gunzTarPerm extractEntry lib/plugins/validator/decor/type.js
+54 silly gunzTarPerm extractEntry makefile
+55 silly gunzTarPerm extractEntry src/field.coffee
+56 silly gunzTarPerm extractEntry src/index.coffee
+57 silly gunzTarPerm extractEntry src/normalize.coffee
+58 silly gunzTarPerm extractEntry src/plugins/base/index.coffee
+59 silly gunzTarPerm extractEntry src/plugins/index.coffee
+60 silly gunzTarPerm extractEntry src/plugins/mapper/index.coffee
+61 silly gunzTarPerm extractEntry src/plugins/sync/decor/base.coffee
+62 silly gunzTarPerm extractEntry src/plugins/sync/decor/collection.coffee
+63 silly gunzTarPerm extractEntry src/plugins/sync/decor/factory.coffee
+64 silly gunzTarPerm extractEntry src/plugins/sync/decor/index.coffee
+65 silly gunzTarPerm extractEntry src/plugins/sync/index.coffee
+66 silly gunzTarPerm extractEntry src/plugins/validator/decor/base.coffee
+67 silly gunzTarPerm extractEntry src/plugins/validator/decor/collection.coffee
+68 silly gunzTarPerm extractEntry src/plugins/validator/decor/explicit.coffee
+69 silly gunzTarPerm extractEntry src/plugins/validator/decor/factory.coffee
+70 silly gunzTarPerm extractEntry src/plugins/validator/decor/index.coffee
+71 silly gunzTarPerm extractEntry src/plugins/validator/decor/multi.coffee
+72 silly gunzTarPerm extractEntry src/plugins/validator/decor/required.coffee
+73 silly gunzTarPerm extractEntry src/plugins/validator/decor/sub.coffee
+74 silly gunzTarPerm extractEntry src/plugins/validator/decor/test.coffee
+75 silly gunzTarPerm extractEntry src/plugins/validator/decor/type.coffee
+76 silly gunzTarPerm extractEntry src/plugins/validator/index.coffee
+77 silly gunzTarPerm extractEntry src/plugins.coffee
+78 silly gunzTarPerm extractEntry test/field/create-test.js
+79 silly gunzTarPerm extractEntry test/field/normalize-test.js
+80 silly gunzTarPerm extractEntry test/validate/collection-test.js
+81 silly gunzTarPerm extractEntry test/validate/explicit-test.js
+82 silly gunzTarPerm extractEntry test/validate/required-test.js
+83 silly gunzTarPerm extractEntry test/validate/sub-test.js
+84 silly gunzTarPerm extractEntry test/validate/type-test.js
+85 silly gunzTarPerm extractEntry test/validate/watch-test.js
+86 silly lockFile 26482557-9409-0-35601275344379246-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package
+87 silly lockFile 26482557-9409-0-35601275344379246-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package
+88 silly lockFile 29441200-9409-0-35601275344379246-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz
+89 silly lockFile 29441200-9409-0-35601275344379246-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/tmp.tgz
+90 verbose tar pack [ '/Users/craig/.npm/bindable-schema/0.1.1/package.tgz',
+90 verbose tar pack   '/var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package' ]
+91 verbose tarball /Users/craig/.npm/bindable-schema/0.1.1/package.tgz
+92 verbose folder /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package
+93 silly lockFile 26482557-9409-0-35601275344379246-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package
+94 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package /Users/craig/.npm/26482557-9409-0-35601275344379246-package.lock
+95 silly lockFile 3f99e2ee-indable-schema-0-1-1-package-tgz tar:///Users/craig/.npm/bindable-schema/0.1.1/package.tgz
+96 verbose lock tar:///Users/craig/.npm/bindable-schema/0.1.1/package.tgz /Users/craig/.npm/3f99e2ee-indable-schema-0-1-1-package-tgz.lock
+97 silly lockFile 26482557-9409-0-35601275344379246-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package
+98 silly lockFile 26482557-9409-0-35601275344379246-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-17926-kRN4ok00/1406236849409-0.35601275344379246/package
+99 silly lockFile 3f99e2ee-indable-schema-0-1-1-package-tgz tar:///Users/craig/.npm/bindable-schema/0.1.1/package.tgz
+100 silly lockFile 3f99e2ee-indable-schema-0-1-1-package-tgz tar:///Users/craig/.npm/bindable-schema/0.1.1/package.tgz
+101 silly lockFile 3c2a5a65-pm-bindable-schema-0-1-1-package /Users/craig/.npm/bindable-schema/0.1.1/package
+102 verbose lock /Users/craig/.npm/bindable-schema/0.1.1/package /Users/craig/.npm/3c2a5a65-pm-bindable-schema-0-1-1-package.lock
+103 silly lockFile 3c2a5a65-pm-bindable-schema-0-1-1-package /Users/craig/.npm/bindable-schema/0.1.1/package
+104 silly lockFile 3c2a5a65-pm-bindable-schema-0-1-1-package /Users/craig/.npm/bindable-schema/0.1.1/package
+105 verbose tar unpack /Users/craig/.npm/bindable-schema/0.1.1/package.tgz
+106 silly lockFile d6927e0b-pm-bindable-schema-0-1-1-package tar:///Users/craig/.npm/bindable-schema/0.1.1/package
+107 verbose lock tar:///Users/craig/.npm/bindable-schema/0.1.1/package /Users/craig/.npm/d6927e0b-pm-bindable-schema-0-1-1-package.lock
+108 silly lockFile 3f99e2ee-indable-schema-0-1-1-package-tgz tar:///Users/craig/.npm/bindable-schema/0.1.1/package.tgz
+109 verbose lock tar:///Users/craig/.npm/bindable-schema/0.1.1/package.tgz /Users/craig/.npm/3f99e2ee-indable-schema-0-1-1-package-tgz.lock
+110 silly gunzTarPerm modes [ '755', '644' ]
+111 silly gunzTarPerm extractEntry package.json
+112 silly gunzTarPerm extractEntry .npmignore
+113 silly gunzTarPerm extractEntry README.md
+114 silly gunzTarPerm extractEntry lib/field.js
+115 silly gunzTarPerm extractEntry lib/index.js
+116 silly gunzTarPerm extractEntry lib/normalize.js
+117 silly gunzTarPerm extractEntry lib/plugins.js
+118 silly gunzTarPerm extractEntry lib/plugins/index.js
+119 silly gunzTarPerm extractEntry lib/plugins/base/index.js
+120 silly gunzTarPerm extractEntry lib/plugins/mapper/index.js
+121 silly gunzTarPerm extractEntry lib/plugins/sync/index.js
+122 silly gunzTarPerm extractEntry lib/plugins/sync/decor/base.js
+123 silly gunzTarPerm extractEntry lib/plugins/sync/decor/collection.js
+124 silly gunzTarPerm extractEntry lib/plugins/sync/decor/factory.js
+125 silly gunzTarPerm extractEntry lib/plugins/sync/decor/index.js
+126 silly gunzTarPerm extractEntry lib/plugins/validator/index.js
+127 silly gunzTarPerm extractEntry lib/plugins/validator/decor/base.js
+128 silly gunzTarPerm extractEntry lib/plugins/validator/decor/collection.js
+129 silly gunzTarPerm extractEntry lib/plugins/validator/decor/explicit.js
+130 silly gunzTarPerm extractEntry lib/plugins/validator/decor/factory.js
+131 silly gunzTarPerm extractEntry lib/plugins/validator/decor/index.js
+132 silly gunzTarPerm extractEntry lib/plugins/validator/decor/multi.js
+133 silly gunzTarPerm extractEntry lib/plugins/validator/decor/required.js
+134 silly gunzTarPerm extractEntry lib/plugins/validator/decor/sub.js
+135 silly gunzTarPerm extractEntry lib/plugins/validator/decor/test.js
+136 silly gunzTarPerm extractEntry lib/plugins/validator/decor/type.js
+137 silly gunzTarPerm extractEntry makefile
+138 silly gunzTarPerm extractEntry src/field.coffee
+139 silly gunzTarPerm extractEntry src/index.coffee
+140 silly gunzTarPerm extractEntry src/normalize.coffee
+141 silly gunzTarPerm extractEntry src/plugins/base/index.coffee
+142 silly gunzTarPerm extractEntry src/plugins/index.coffee
+143 silly gunzTarPerm extractEntry src/plugins/mapper/index.coffee
+144 silly gunzTarPerm extractEntry src/plugins/sync/decor/base.coffee
+145 silly gunzTarPerm extractEntry src/plugins/sync/decor/collection.coffee
+146 silly gunzTarPerm extractEntry src/plugins/sync/decor/factory.coffee
+147 silly gunzTarPerm extractEntry src/plugins/sync/decor/index.coffee
+148 silly gunzTarPerm extractEntry src/plugins/sync/index.coffee
+149 silly gunzTarPerm extractEntry src/plugins/validator/decor/base.coffee
+150 silly gunzTarPerm extractEntry src/plugins/validator/decor/collection.coffee
+151 silly gunzTarPerm extractEntry src/plugins/validator/decor/explicit.coffee
+152 silly gunzTarPerm extractEntry src/plugins/validator/decor/factory.coffee
+153 silly gunzTarPerm extractEntry src/plugins/validator/decor/index.coffee
+154 silly gunzTarPerm extractEntry src/plugins/validator/decor/multi.coffee
+155 silly gunzTarPerm extractEntry src/plugins/validator/decor/required.coffee
+156 silly gunzTarPerm extractEntry src/plugins/validator/decor/sub.coffee
+157 silly gunzTarPerm extractEntry src/plugins/validator/decor/test.coffee
+158 silly gunzTarPerm extractEntry src/plugins/validator/decor/type.coffee
+159 silly gunzTarPerm extractEntry src/plugins/validator/index.coffee
+160 silly gunzTarPerm extractEntry src/plugins.coffee
+161 silly gunzTarPerm extractEntry test/field/create-test.js
+162 silly gunzTarPerm extractEntry test/field/normalize-test.js
+163 silly gunzTarPerm extractEntry test/validate/collection-test.js
+164 silly gunzTarPerm extractEntry test/validate/explicit-test.js
+165 silly gunzTarPerm extractEntry test/validate/required-test.js
+166 silly gunzTarPerm extractEntry test/validate/sub-test.js
+167 silly gunzTarPerm extractEntry test/validate/type-test.js
+168 silly gunzTarPerm extractEntry test/validate/watch-test.js
+169 silly lockFile d6927e0b-pm-bindable-schema-0-1-1-package tar:///Users/craig/.npm/bindable-schema/0.1.1/package
+170 silly lockFile d6927e0b-pm-bindable-schema-0-1-1-package tar:///Users/craig/.npm/bindable-schema/0.1.1/package
+171 silly lockFile 3f99e2ee-indable-schema-0-1-1-package-tgz tar:///Users/craig/.npm/bindable-schema/0.1.1/package.tgz
+172 silly lockFile 3f99e2ee-indable-schema-0-1-1-package-tgz tar:///Users/craig/.npm/bindable-schema/0.1.1/package.tgz
+173 verbose chmod /Users/craig/.npm/bindable-schema/0.1.1/package.tgz 644
+174 verbose chown /Users/craig/.npm/bindable-schema/0.1.1/package.tgz [ 501, 20 ]
+175 silly lockFile 3a52ce78- .
+176 silly lockFile 3a52ce78- .
+177 silly publish { name: 'bindable-schema',
+177 silly publish   version: '0.1.1',
+177 silly publish   description: '```javascript',
+177 silly publish   main: './lib/index.js',
+177 silly publish   scripts: { test: 'mocha --recursive --timeout 100 --bail' },
+177 silly publish   repository:
+177 silly publish    { type: 'git',
+177 silly publish      url: 'git://github.com/classdojo/bindable-schema.git' },
+177 silly publish   author: '',
+177 silly publish   license: 'BSD',
+177 silly publish   readmeFilename: 'README.md',
+177 silly publish   gitHead: 'b0f056aef3111ef1bf882c834d6a5be9eab4ee14',
+177 silly publish   devDependencies: { 'expect.js': '~0.2.0', mocha: '~1.13.0' },
+177 silly publish   dependencies:
+177 silly publish    { 'type-component': '0.0.1',
+177 silly publish      factories: '0.0.3',
+177 silly publish      async: '~0.2.9',
+177 silly publish      toarray: '0.0.1',
+177 silly publish      bindable: '~0.5.2',
+177 silly publish      funwrap: '0.0.7',
+177 silly publish      dref: '~0.1.2',
+177 silly publish      underscore: '~1.5.2' },
+177 silly publish   readme: '```javascript\n\nvar person   = new BindableObject(),\npersonSchema = new BindableSchema({\n  username: {\n    $validate: [    \n      { min: 6, error: { message: "Username must be at least 6 characters" } },\n      checkUsername\n    ]\n  }\n});\n\npersonSchema.use(bindableSchemaValidator);\n\n\n//create a watcher of a particular bindable object\nvar personWatcher = personSchema.attach(person);\n\n//when the person changes, the fields will \nperson.set("username", "abba");\n\npersonWatcher.get("username.$valid"); // Username must be at least 6 characters\npersonWatcher.get("valid.$error"); // false\npersonWatcher.get("$valid"); // false\n\n//set username that exists\nperson.set("username", "craigonator");\n\n//after N seconds\npersonWatcher.get("fields.username.error"); // username exists\n```\n',
+177 silly publish   bugs: { url: 'https://github.com/classdojo/bindable-schema/issues' },
+177 silly publish   homepage: 'https://github.com/classdojo/bindable-schema',
+177 silly publish   _id: 'bindable-schema@0.1.1',
+177 silly publish   dist: { shasum: '73a87b8dbd0a99828ba5d9a66522087d5a12d989' },
+177 silly publish   _from: '.' }
+178 verbose url raw bindable-schema
+179 verbose url resolving [ 'http://registry.npmjs.org/', './bindable-schema' ]
+180 verbose url resolved http://registry.npmjs.org/bindable-schema
+181 info trying registry request attempt 1 at 14:20:49
+182 http PUT http://registry.npmjs.org/bindable-schema
+183 http 403 http://registry.npmjs.org/bindable-schema
+184 error publish Failed PUT 403
+185 error Error: forbidden Cannot replace previously published version: 0.1.1: bindable-schema
+185 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:237:14)
+185 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:123:22)
+185 error     at Request.EventEmitter.emit (events.js:98:17)
+185 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:893:14)
+185 error     at Request.EventEmitter.emit (events.js:117:20)
+185 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:844:12)
+185 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+185 error     at _stream_readable.js:920:16
+185 error     at process._tickCallback (node.js:415:13)
+186 error If you need help, you may report this *entire* log,
+186 error including the npm and node versions, at:
+186 error     <http://github.com/npm/npm/issues>
+187 error System Darwin 13.3.0
+188 error command "node" "/usr/local/bin/npm" "publish"
+189 error cwd /Users/craig/Developer/Public/bindable-schema
+190 error node -v v0.10.26
+191 error npm -v 1.4.3
+192 verbose exit [ 1, true ]
