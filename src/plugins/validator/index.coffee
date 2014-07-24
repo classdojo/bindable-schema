@@ -79,7 +79,7 @@ class Validator extends require("../base")
         watcher.set "$valid", !pending.length
 
     for prop in toarray(field.options.bind or field.path)
-      model.bind prop, validate
+      model.bind prop, { to: validate }
 
     validate()
 
